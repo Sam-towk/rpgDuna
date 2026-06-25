@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 5. RSVP - Lógica do Terminal (Google Sheets)
     // COLOQUE AQUI A URL DO SEU GOOGLE APPS SCRIPT GERADA NA PLANILHA
-    const GOOGLE_SHEETS_URL = 'https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnT1wpo-W4B8wfA_FftDuxeNssPRvQSSv3Z-6_PEUEOldgwdkwEftkCbATLX42Wj_OSTssWSijkFJQ0gRaQUNRIqHw6TsH4bRJEyDnFKPMs1QHDl3e1etLURNM5Ut4hhSbyoWjhTb864XjRWLyCJyzZWc0o-Qm2Q17TvlXR8adkbSyYRtkr2S39M487DR1mUlO_Yn8AyN01lqjzRZXIAMpR3hyqigf-l7okH2N7PdbpfTh34iHDi7rl4cv5fuUTGYeTS-X1DY39V-sF8z40iN7MPVata-w&lib=M2VznAA_IO8K1vKaxM9_JSkZGQdzpl-Lo'; 
+    const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzaSUp_4iMIzACcerdzpcraFuXJu6qoulXB8ijFE5VtBjFiVK-vzTY-OnBi9o_KPbFp/exec'; 
 
     window.handleRSVP = async function() {
         const name = document.getElementById('inputName').value;
