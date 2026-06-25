@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DUNE: Aventuras no Império | Convocação Imperial</title>
+  <meta name="description" content="Você foi escolhido pelo Império. Uma aventura épica de RPG no universo de Dune aguarda — intrigas políticas, especiaria e destino se entrelaçam em Arrakis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ CANVAS DE AREIA ═══════════════════════════════ -->
+  <canvas id="sandCanvas"></canvas>
+
+  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <span class="nav-logo">☽ DUNE RPG</span>
+      <ul class="nav-links">
+        <li><a href="#decreto">O Decreto</a></li>
+        <li><a href="#mundo">O Mundo</a></li>
+        <li><a href="#personagens">Casas</a></li>
+        <li><a href="#sessao">A Sessão</a></li>
+        <li><a href="#rsvp" class="nav-cta">Confirmar Presença</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg-image"></div>
+    <div class="heat-shimmer"></div>
+
+    <div class="hero-content">
+      <div class="seal-wrapper">
+        <div class="seal-ring outer-ring"></div>
+        <div class="seal-ring mid-ring"></div>
+        <img src="assets/imperial_seal.png" alt="Selo Imperial" class="seal-img" id="sealImg" />
+        <div class="seal-glow"></div>
+      </div>
+
+      <p class="hero-eyebrow reveal-text" id="eyebrow">— DECRETO IMPERIAL —</p>
+      <h1 class="hero-title" id="heroTitle"></h1>
+      <p class="hero-subtitle reveal-text" id="heroSubtitle">
+        Uma aventura de RPG no coração de <em>Arrakis</em>
+      </p>
+
+      <div class="hero-meta reveal-text" id="heroMeta">
+        <span class="meta-item">
+          <span class="meta-icon">⧖</span>
+          <span class="meta-label">Data</span>
+          <span class="meta-value" id="sessionDate">A ser revelada</span>
+        </span>
+        <span class="meta-divider">✦</span>
+        <span class="meta-item">
+          <span class="meta-icon">◉</span>
+          <span class="meta-label">Local</span>
+          <span class="meta-value" id="sessionPlace">Casa da Mesa</span>
+        </span>
+        <span class="meta-divider">✦</span>
+        <span class="meta-item">
+          <span class="meta-icon">⬡</span>
+          <span class="meta-label">Sistema</span>
+          <span class="meta-value">Dune: Adventures in the Imperium</span>
+        </span>
+      </div>
+
+      <div class="hero-actions reveal-text" id="heroActions">
+        <a href="#rsvp" class="btn-primary" id="ctaAccept">
+          <span class="btn-text">Aceitar a Convocação</span>
+          <span class="btn-spice"></span>
+        </a>
+        <a href="#decreto" class="btn-secondary" id="ctaLearn">
+          Ler o Decreto
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Rolar para descobrir</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ DECRETO ═══════════════════════════════ -->
+  <section id="decreto" class="section-decreto">
+    <div class="container">
+      <div class="parchment-card scroll-reveal">
+        <div class="parchment-border"></div>
+        <div class="parchment-inner">
+          <div class="decree-header">
+            <div class="decree-seal-small"></div>
+            <div>
+              <p class="decree-from">Por ordem do Imperador Padishah</p>
+              <h2 class="decree-title">O Decreto de Arrakis</h2>
+            </div>
+            <div class="decree-seal-small mirror"></div>
+          </div>
+
+          <div class="decree-body">
+            <p class="decree-lead">
+              <em>
+                "Que esta mensagem chegue aos olhos dos escolhidos, e apenas aos escolhidos —
+                pois o destino do Império e da especiaria está nas mãos de poucos."
+              </em>
+            </p>
+
+            <p>
+              O planeta Arrakis sangra. A <strong>Especiaria Melange</strong>, fonte de toda riqueza
+              e poder no Império Conhecido, está em perigo. Forças ocultas se movem nas sombras
+              das dunas — a <strong>Bene Gesserit</strong> tece seus planos milenares, as
+              <strong>Casas Nobres</strong> se esquartejam por poder, e os
+              <strong>Fremen</strong> aguardam o cumprimento da profecia.
+            </p>
+
+            <p>
+              Você foi identificado como alguém de valor excepcional para o Imperador.
+              Sua <strong>habilidade, inteligência e discrição</strong> são requeridas em uma
+              missão de imensa importância — uma que moldará o futuro de Arrakis e de toda
+              a humanidade conhecida.
+            </p>
+
+            <p class="decree-highlight">
+              A questão não é se você vai responder ao chamado.<br/>
+              A questão é: <strong>qual o preço do seu silêncio se não o fizer?</strong>
+            </p>
+          </div>
+
+          <div class="decree-footer">
+            <div class="decree-signature">
+              <p class="sig-title">O Mestre da Mesa</p>
+              <p class="sig-name" id="masterName">[ Nome do Mestre ]</p>
+            </div>
+            <div class="decree-stamp">
+              <span>SELADO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ O MUNDO ═══════════════════════════════ -->
+  <section id="mundo" class="section-mundo">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <p class="section-eyebrow">— O Universo —</p>
+        <h2 class="section-title">O Mundo em Jogo</h2>
+        <p class="section-sub">Três forças titânicas moldam o destino do Império Conhecido</p>
+      </div>
+
+      <div class="world-grid">
+
+        <div class="world-card scroll-reveal" id="cardArrakis">
+          <div class="world-card-glow"></div>
+          <div class="world-card-icon">🌍</div>
+          <div class="world-card-number">I</div>
+          <h3 class="world-card-title">Arrakis</h3>
+          <p class="world-card-sub">O Planeta Deserto</p>
+          <p class="world-card-desc">
+            Lar da Especiaria Melange — a substância mais valiosa do universo. Sem ela,
+            não há viagem espacial. Sem ela, não há Império. Arrakis é ao mesmo tempo
+            prisão e paraíso, maldição e bênção.
+          </p>
+          <ul class="world-card-tags">
+            <li>Especiaria Melange</li>
+            <li>Vermes da Areia</li>
+            <li>Fremen</li>
+          </ul>
+        </div>
+
+        <div class="world-card scroll-reveal world-card--center" id="cardImperio">
+          <div class="world-card-glow"></div>
+          <div class="world-card-icon">⚜️</div>
+          <div class="world-card-number">II</div>
+          <h3 class="world-card-title">O Império</h3>
+          <p class="world-card-sub">O Grande Jogo Político</p>
+          <p class="world-card-desc">
+            Casas Nobres, o Landsraad, a Guilda Espacial e a Bene Gesserit — todos
+            jogando um jogo de séculos onde a lealdade é moeda e a traição é arte.
+            Cada aliança esconde uma adaga.
+          </p>
+          <ul class="world-card-tags">
+            <li>Casas Nobres</li>
+            <li>Intrigas Políticas</li>
+            <li>Bene Gesserit</li>
+          </ul>
+        </div>
+
+        <div class="world-card scroll-reveal" id="cardProfecia">
+          <div class="world-card-glow"></div>
+          <div class="world-card-icon">🌙</div>
+          <div class="world-card-number">III</div>
+          <h3 class="world-card-title">A Profecia</h3>
+          <p class="world-card-sub">O Kwisatz Haderach</p>
+          <p class="world-card-desc">
+            Há milênios a Bene Gesserit tece um plano genético e místico — criar o ser
+            que pode ver além do tempo. A profecia se aproxima de seu cumprimento.
+            Você pode ser parte dela... ou ser destruído por ela.
+          </p>
+          <ul class="world-card-tags">
+            <li>Visão Presciente</li>
+            <li>Jihad</li>
+            <li>Destino</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ PERSONAGENS ═══════════════════════════════ -->
+  <section id="personagens" class="section-personagens">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <p class="section-eyebrow">— Os Escolhidos —</p>
+        <h2 class="section-title">Escolha Sua Casa</h2>
+        <p class="section-sub">Cada caminho carrega seu próprio peso e glória</p>
+      </div>
+
+      <div class="char-grid">
+
+        <div class="char-card scroll-reveal" id="charNoble">
+          <div class="char-card-inner">
+            <div class="char-card-front">
+              <div class="char-sigil">⚜</div>
+              <h3 class="char-name">O Nobre</h3>
+              <p class="char-house">Casa Atreides</p>
+              <p class="char-tagline">Poder herdado. Lealdade testada.</p>
+            </div>
+            <div class="char-card-back">
+              <h3 class="char-back-title">O Nobre</h3>
+              <p class="char-back-desc">
+                Portador do nome de uma Casa poderosa, você navega as intrigas do Landsraad
+                com diplomacia e força. Seu nome abre portas — e fecha outras.
+              </p>
+              <ul class="char-skills">
+                <li>⬡ Liderança &amp; Política</li>
+                <li>⬡ Combate com Escudo</li>
+                <li>⬡ Gestão de Recursos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="char-card scroll-reveal" id="charMentat">
+          <div class="char-card-inner">
+            <div class="char-card-front">
+              <div class="char-sigil">◈</div>
+              <h3 class="char-name">O Mentat</h3>
+              <p class="char-house">Computador Humano</p>
+              <p class="char-tagline">Dados são a espada mais afiada.</p>
+            </div>
+            <div class="char-card-back">
+              <h3 class="char-back-title">O Mentat</h3>
+              <p class="char-back-desc">
+                Treinado para substituir computadores proibidos pelo Jihad Butleriano,
+                sua mente é uma máquina de análise e previsão. Nada escapa ao seu cálculo.
+              </p>
+              <ul class="char-skills">
+                <li>⬡ Análise &amp; Dedução</li>
+                <li>⬡ Estratégia Militar</li>
+                <li>⬡ Memória Eidética</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="char-card scroll-reveal" id="charBeneGesserit">
+          <div class="char-card-inner">
+            <div class="char-card-front">
+              <div class="char-sigil">☽</div>
+              <h3 class="char-name">Bene Gesserit</h3>
+              <p class="char-house">Sisterhood</p>
+              <p class="char-tagline">A Voz que move o mundo.</p>
+            </div>
+            <div class="char-card-back">
+              <h3 class="char-back-title">Bene Gesserit</h3>
+              <p class="char-back-desc">
+                Treinada em Prana-Bindu, A Voz e séculos de sabedoria oculta, você vê
+                o que outros não conseguem ver — e manipula o que outros não conseguem tocar.
+              </p>
+              <ul class="char-skills">
+                <li>⬡ A Voz &amp; Prana-Bindu</li>
+                <li>⬡ Manipulação Política</li>
+                <li>⬡ Memória Ancestral</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="char-card scroll-reveal" id="charFremen">
+          <div class="char-card-inner">
+            <div class="char-card-front">
+              <div class="char-sigil">◎</div>
+              <h3 class="char-name">O Fremen</h3>
+              <p class="char-house">Filhos do Deserto</p>
+              <p class="char-tagline">Arrakis é minha mãe e meu lar.</p>
+            </div>
+            <div class="char-card-back">
+              <h3 class="char-back-title">O Fremen</h3>
+              <p class="char-back-desc">
+                Você nasceu nas dunas e sobreviveu ao que destruiria qualquer forasteiro.
+                Conhece os segredos de Arrakis, monta Vermes e carrega a profecia no sangue.
+              </p>
+              <ul class="char-skills">
+                <li>⬡ Sobrevivência no Deserto</li>
+                <li>⬡ Combate Crys-knife</li>
+                <li>⬡ Sietch &amp; Comunidade</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="char-hint scroll-reveal">✦ Passe o mouse sobre as cartas para revelar mais ✦</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ SESSÃO ═══════════════════════════════ -->
+  <section id="sessao" class="section-sessao">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <p class="section-eyebrow">— Os Detalhes —</p>
+        <h2 class="section-title">A Sessão</h2>
+      </div>
+
+      <div class="sessao-grid">
+        <div class="sessao-info scroll-reveal">
+          <div class="info-block">
+            <span class="info-icon">📅</span>
+            <div>
+              <p class="info-label">Data & Hora</p>
+              <p class="info-value" id="infoDate">A definir pelo Mestre</p>
+            </div>
+          </div>
+          <div class="info-block">
+            <span class="info-icon">📍</span>
+            <div>
+              <p class="info-label">Local</p>
+              <p class="info-value" id="infoPlace">A ser revelado</p>
+            </div>
+          </div>
+          <div class="info-block">
+            <span class="info-icon">⏱️</span>
+            <div>
+              <p class="info-label">Duração estimada</p>
+              <p class="info-value">4 a 6 horas</p>
+            </div>
+          </div>
+          <div class="info-block">
+            <span class="info-icon">👥</span>
+            <div>
+              <p class="info-label">Jogadores</p>
+              <p class="info-value">3 a 5 escolhidos</p>
+            </div>
+          </div>
+          <div class="info-block">
+            <span class="info-icon">📖</span>
+            <div>
+              <p class="info-label">Sistema</p>
+              <p class="info-value">Dune: Adventures in the Imperium (2d20)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sessao-quote scroll-reveal">
+          <blockquote class="dune-quote">
+            <p>"Eu devo não ter medo. O medo é o assassino da mente. O medo é a pequena morte que traz a obliteração total."</p>
+            <footer>— Litania Contra o Medo, Bene Gesserit</footer>
+          </blockquote>
+          <div class="quote-ornament">✦</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ RSVP ═══════════════════════════════ -->
+  <section id="rsvp" class="section-rsvp">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <p class="section-eyebrow">— A Profecia Nomeia —</p>
+        <h2 class="section-title">Confirme sua Presença</h2>
+        <p class="section-sub">O destino de Arrakis aguarda sua decisão</p>
+      </div>
+
+      <div class="rsvp-terminal scroll-reveal" id="rsvpTerminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="terminal-title">CHOAM SECURE CHANNEL // IMPERIAL NET v4.21</span>
+        </div>
+        <div class="terminal-body">
+          <p class="terminal-prompt">» Identificação do Agente:</p>
+          <input type="text" id="inputName" class="terminal-input" placeholder="Seu nome..." autocomplete="off" />
+
+          <p class="terminal-prompt">» Escolha sua Casa:</p>
+          <div class="terminal-select-group" id="houseSelect">
+            <label class="terminal-option">
+              <input type="radio" name="house" value="atreides" />
+              <span>Casa Atreides</span>
+            </label>
+            <label class="terminal-option">
+              <input type="radio" name="house" value="harkonnen" />
+              <span>Casa Harkonnen</span>
+            </label>
+            <label class="terminal-option">
+              <input type="radio" name="house" value="fremen" />
+              <span>Fremen</span>
+            </label>
+            <label class="terminal-option">
+              <input type="radio" name="house" value="bene-gesserit" />
+              <span>Bene Gesserit</span>
+            </label>
+          </div>
+
+          <p class="terminal-prompt">» Mensagem ao Mestre <span class="optional">(opcional):</span></p>
+          <textarea id="inputMessage" class="terminal-input terminal-textarea" placeholder="Suas palavras chegam ao Mestre..." rows="3"></textarea>
+
+          <div class="terminal-actions">
+            <button class="btn-primary" id="rsvpConfirm" onclick="handleRSVP()">
+              <span class="btn-text">⬡ Transmitir Confirmação</span>
+              <span class="btn-spice"></span>
+            </button>
+            <button class="btn-ghost" id="rsvpDecline" onclick="handleDecline()">Recusar o Chamado</button>
+          </div>
+
+          <div class="terminal-response" id="terminalResponse" style="display:none;"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-ornament">✦ ✦ ✦</div>
+    <blockquote class="footer-quote">
+      <p>"O começo é um momento tão delicado que requer o máximo cuidado."</p>
+      <footer>— Frank Herbert, Dune</footer>
+    </blockquote>
+    <p class="footer-credits">Criado com especiaria e muito carinho ✦ DUNE RPG Campaign</p>
+    <p class="footer-system">Sistema: <em>Dune: Adventures in the Imperium</em> — Modiphius Entertainment</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
